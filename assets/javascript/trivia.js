@@ -71,8 +71,6 @@ var questionsArray = [{
   answers: ["Suzuki", "Harley-Davidson", "Yamaha", "Honda"],
   
   correctAnswer: "Honda"
-}, {
-
 }]
 
 
@@ -84,187 +82,17 @@ var game = {
 	questionTimer: 30,
     questionNumber: 0,
     correctAnswers: 0,
-    wrongAnswers: 0,
-    unAnswered: 0,
-    currentQuestionNumber: 0,
-
-
-    
+    wrongAnswers: 0,   
     startGame: function() {
     	$('#start').remove();
     	$('#question_box').append("<h1>Start Trivia</h1>");
-
     	for (var i = 0; i < questionsArray.length; i++) {
     		$('#question_box').append('<h2>' + questionsArray[i].question + '</h2>');
-    	
-    			
-    	for (var x = 0; x < questionsArray[i].answers.length; x++) {
-    		$('#question_box').append('<input type="radio" name="answers '+i+' ">' + questionsArray[i].answers[x] );
-
-        // panel.append('<button id="done">Submit</button>');
-
-
-    }
-
+    		for (var t = 0; t < 4; t++) {
+    			$('#question_box').append('<input type="radio" name="answers'+i+'">' + questionsArray[i].answers[t] );
+    		}
+		}
+	},
+	done: function() {
+	}
 }
-
-};
-
-
-
-    	//start timer
-
-
-
-    	// $("<h1>Start Trivia</h1>").remove();	
-    
-  //   	countdown: function(){
-		// console.log(game.questionTimer);
-		// game.questionTimer --;	
-
-		// game.loadQuestion
-
-	    		
-    	
-
-		// // questionsArray[i]
-
-  //   },
-
-    
-
-//     countdown: function() {
-
-//         // Set Countdown time for each question
-
-//     },
-
-//     timeUp: function() {
-
-//       //  What happens when the timer runs out
-
-//     },
-
-//     reset: function() {
-
-
-//     },
-
-//     checkGuess: function() {
-
-//         // Is this the correct answer for the Question
-
-//         // Yes
-
-//         // No
-
-//         // Is this the last Question?
-//         if (this.questionNumber === questionsArray.length - 1) {
-
-//             // Game Over!!
-
-//         } else {
-
-//             // Continue Game
-//         }
-
-
-//     },
-
-//     finalResults: function() {
-
-
-//     },
-
-//     loadQuestion: function() {
-
-//         // start timer
-//         timer = setInterval(game.countdown, 1000);
-
-//         // Print Question
-//         console.log(this.questions[questionNumber].question)
-
-//         // Print Choices as buttons (for loop needed)
-//         console.log(this.questions[questionNumber].choices[0])
-//         console.log(this.questions[questionNumber].choices[1])
-//         console.log(this.questions[questionNumber].choices[2])
-//         console.log(this.questions[questionNumber].choices[3])
-//         console.log(this.questions[questionNumber].correctChoice)
-
-//     },
-
-//     nextQuestion: function() {
-
-//         // start timer
-//         this.timer()
-
-//         // Advance Question Number
-//         this.questionNumber++
-// //
-//   //      Call loadQuestion() Function
-
-//     }
-
-// }
-
-// var panel = $('#quiz-area');
-
-
-// $(document).on('click', '#start', function(e) {
-//   game.start();
-// });
-
-// $(document).on('click', '#done', function(e) {
-//   game.done();
-// });
-
-
-//Question set
-  //var questions = all questoins and choices
-  
-
-// var game = {
-//   correct:0,
-//   incorrect:0,
-//   counter:120,
-//   countdown: function(){
-//     game.counter--;
-//     $('#counter-number').html(game.counter);
-
-//     if (game.counter === 0){
-//       console.log('TIME UP');
-//       game.done();
-//     }
-//   },
-//   start: function() {
-//     timer = setInterval(game.countdown, 1000);
-
-//     $('#subwrapper').append('<h2>Time Remaining: <span id="counter-number">120</span> Seconds</h2>');
-//     $('#start').remove();
-
-
-//    //for each question you will loop and add buttons and display each choice with jquery
-//   for(var i=0; i < 10; i++) {
-//     //code here
-//     for(var j=0; j<4; j++) {
-//       //code her
-//     }
-//   }
-    
-//   },
-//   done: function() {
-
-//     //for each questions if they answered correct
-//     //marked as checked if false well increment incorrect 
-
- 
-//   },
-//     result: function() {
-
-//     clearInterval(timer);
-
-
-//     //the results of correct or incorrect go here
-//   }
-
-// };
